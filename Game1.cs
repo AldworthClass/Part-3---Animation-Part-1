@@ -26,9 +26,7 @@ namespace Part_3___Animation
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.Window.Title = "Lesson 3 - Animation Part 1";
-            IsMouseVisible = true;
-
-            
+            IsMouseVisible = true;  
         }
 
         protected override void Initialize()
@@ -67,9 +65,9 @@ namespace Part_3___Animation
             tribbleGreyRect.X += (int)tribbleGreySpeed.X;
             tribbleGreyRect.Y += (int)tribbleGreySpeed.Y;
 
-            if (tribbleGreyRect.Right > _graphics.PreferredBackBufferWidth || tribbleGreyRect.X < 0)
+            if (tribbleGreyRect.Right > window.Width || tribbleGreyRect.X < 0)
                 tribbleGreySpeed.X *= -1;
-            if (tribbleGreyRect.Bottom > _graphics.PreferredBackBufferHeight || tribbleGreyRect.Top < 0)
+            if (tribbleGreyRect.Bottom > window.Height || tribbleGreyRect.Top < 0)
                 tribbleGreySpeed.Y *= -1;
 
 
