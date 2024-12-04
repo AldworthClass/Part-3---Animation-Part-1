@@ -9,6 +9,8 @@ namespace Part_3___Animation
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        Rectangle window;
+
         Texture2D tribbleBrownTexture;
 
         Texture2D tribbleCreamTexture;
@@ -26,14 +28,17 @@ namespace Part_3___Animation
             this.Window.Title = "Lesson 3 - Animation Part 1";
             IsMouseVisible = true;
 
-            _graphics.PreferredBackBufferWidth = 800;  // set this value to the desired width of your window
-            _graphics.PreferredBackBufferHeight = 500;   // set this value to the desired height of your window
-            _graphics.ApplyChanges();
+            
         }
 
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            window = new Rectangle(0, 0, 800, 500);
+            _graphics.PreferredBackBufferWidth = window.Width;  // set this value to the desired width of your window
+            _graphics.PreferredBackBufferHeight = window.Height;   // set this value to the desired height of your window
+            _graphics.ApplyChanges();
+
             tribbleGreyRect = new Rectangle(300, 10, 100, 100);
             tribbleGreySpeed = new Vector2(2, 0);
 
